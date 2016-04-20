@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      get '/dashboard' => 'home#dashboard', as: :authenticated_user
+      get '/dashboard' => 'todo#dashboard', as: :authenticated_user
     end
   end
 
