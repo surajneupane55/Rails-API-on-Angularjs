@@ -14,6 +14,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :Api, defaults: {format: :json} do
+    devise_scope :user do
+      resource :session, only: [:create, :destroy]
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
