@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 after_create :generate_authentication_token!
+  has_many :lists, through: :tasks
+  has_many :tasks
 
 
 
