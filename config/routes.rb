@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,13 +14,11 @@ Rails.application.routes.draw do
       get '/dashboard' => 'todo#dashboard', as: :authenticated_user
     end
   end
-
-  namespace :Api, defaults: {format: :json} do
-    devise_scope :user do
-      resource :session, only: [:create, :destroy]
-    end
+  namespace :api, default: [format: :json] do
+  resource :task do
+    resources :list
   end
-
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -68,4 +67,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end

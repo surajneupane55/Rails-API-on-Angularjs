@@ -1,4 +1,3 @@
-class Api::BaseController < ApplicationController
-  def index
-  end
+class api::BaseController < ActionController::Base
+before_action :authenticate_user!
 end
