@@ -1,12 +1,12 @@
-class Api::ListController < BaseController
-  before_action :set_list, only:[:show, :update, :destroy ]
+class Api::ListController < Api::BaseController
+  before_action :check_user, only: [:show, :update, :destroy]
 
   def index
-    render json: @lists
+    render json: @lists.all
   end
 
   def create
-    @list = List.new(list_param)
+    @list =task.list.new(safe_param)
     if @list.save
       render json: @list, status: :created, location: @task
     else
@@ -14,12 +14,8 @@ class Api::ListController < BaseController
     end
   end
 
-  def show
-    render json: @list
-  end
-
   def update
-    if @list.update(list_param)
+    if @list.update(safe_param)
       head :no_content
     else
       render json: @list.errors, status: :unprocessable_entity
@@ -33,15 +29,23 @@ class Api::ListController < BaseController
 
   private
   def set_list
-    @list = List.find(params[:id])
+    @list ||= task.List.find(params[:id])
   end
 
   def set_lists
-    @lists=List.find(params[:task_id])
+    @lists ||= task.List.find(params[:task_id])
   end
 
-  def list_param
+  def set_task
+    @task ||= Task.find(params[:task_id])
+  end
+
+  def safe_param
     params.require(:list).allow(:due_date, :description, :status)
+  end
+
+  def check_owner
+    permission_denied if current_user != task.owner
   end
 
 end

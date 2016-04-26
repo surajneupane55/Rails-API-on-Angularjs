@@ -3,16 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-after_create :generate_authentication_token!
-  has_many :lists, through: :tasks
-  has_many :tasks
+  has_many :tasks, foreign_key: :user_id
+  after_create :create_task
 
-
-
-
-  private
-  def generate_authentication_token!
-    self.authenticate_token = Digest::SHA2.hexadigest("#{Time.now}-#{self.id}-#{self.updated_at}")
-    self.save
+  def create_task
+    task.create!(name:'My First Task')
   end
 end

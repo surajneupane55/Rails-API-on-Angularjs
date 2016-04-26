@@ -1,13 +1,13 @@
-class Api::TaskController < BaseController
-
+class Api::TaskController < Api::BaseController
+  before_action :check_user, only: [:Show, :update, :destroy]
   before_action :set_task, only: [:show, :update, :destroy]
 
   def index
-    render json: @tasks
+    render json: current_user.tasks
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(safe_params)
 
     if @task.save
       render json: @task, status:  :created, location: @task
@@ -17,7 +17,7 @@ class Api::TaskController < BaseController
   end
 
   def update
-    if @task.update(task_params)
+    if @task.update(safe_params)
       head :no_content
     else
       render json: @task.error, status: :unprocessable_entity
@@ -34,17 +34,15 @@ class Api::TaskController < BaseController
   end
 
   private
+  def check_owner
+    permission_denied if current_user != task.user
+  end
 
-  def task_params
+  def safe_params
     params.require(:task).allow(:name, :due_date)
   end
 
   def set_task
     @task = Task.find(params[:id])
   end
-
-  def set_tasks
-    @tasks = Task.find_by(params[:user_id])
-  end
-
 end
