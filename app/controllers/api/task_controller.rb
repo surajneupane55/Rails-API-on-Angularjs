@@ -1,4 +1,5 @@
 class Api::TaskController < Api::BaseController
+  before_action :authenticate
   before_action :check_user, only: [:Show, :update, :destroy]
   before_action :set_task, only: [:show, :update, :destroy]
 
@@ -7,29 +8,29 @@ class Api::TaskController < Api::BaseController
   end
 
   def create
-    @task = current_user.tasks.new(safe_params)
+    task = current_user.tasks.new(safe_params)
 
-    if @task.save
-      render json: @task, status:  :created, location: @task
+    if task.save
+      render json: task, status:  :created, location: task
     else
-      render json: @task.errors, status: :unprocessable_entity
+      render json: task.errors, status: :unprocessable_entity
     end
   end
 
   def update
-    if @task.update(safe_params)
+    if task.update(safe_params)
       head :no_content
     else
-      render json: @task.error, status: :unprocessable_entity
+      render json: task.error, status: :unprocessable_entity
     end
   end
 
   def show
-    render json: @task
+    render json: task
   end
 
   def destroy
-    @task.destroy
+    task.destroy
     head :no_content
   end
 
@@ -39,10 +40,10 @@ class Api::TaskController < Api::BaseController
   end
 
   def safe_params
-    params.require(:task).allow(:name, :due_date)
+    params.require(:task).allow(:name)
   end
 
-  def set_task
-    @task = Task.find(params[:id])
+  def task
+    @task ||= Task.find_by(params[:id])
   end
 end
