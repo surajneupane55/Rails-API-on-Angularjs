@@ -4,10 +4,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tasks, foreign_key: :user_id
+
   after_create :create_task
+
   before_create do |doc|
     doc.authenticate_token = doc.generate_api_key
   end
+
+
+
 
   def generate_api_key
     loop do

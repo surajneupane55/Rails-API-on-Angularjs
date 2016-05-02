@@ -5,4 +5,5 @@ class Task < ActiveRecord::Base
   validates :user, presence: true
   validates :name, presence:true
 
+
 end
