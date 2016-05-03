@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     end
   end
   namespace :api, defaults: {format: :json} do
+    devise_scope :user do
+      resource :session, only:[:create, :destroy]
+    end
     resources :tasks, only: [:index, :create, :update, :destroy, :show] do
       resources :lists, only: [:index, :create, :update, :destroy]
     end

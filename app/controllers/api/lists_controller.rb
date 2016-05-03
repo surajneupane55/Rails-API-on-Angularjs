@@ -1,5 +1,5 @@
 class Api::ListsController < Api::BaseController
-  before_action :authenticate
+
   before_action :check_user, only: [:show, :update, :destroy]
 
   def index

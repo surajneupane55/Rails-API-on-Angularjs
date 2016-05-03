@@ -11,6 +11,14 @@ class User < ActiveRecord::Base
     doc.authenticate_token = doc.generate_api_key
   end
 
+  def create_authentication_token!
+    authenticate_token = generate_api_key
+    update_attribute(:authenticate_token, authenticate_token)
+  end
+
+  def destroy_authentication_token!
+    update_attribute(:authenticate_token, nil)
+  end
 
 
 

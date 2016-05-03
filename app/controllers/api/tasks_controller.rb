@@ -1,6 +1,5 @@
 class Api::TasksController < Api::BaseController
 
-  before_action :authenticate
   before_action :check_user, only: [:show, :update, :destroy]
   before_action :task, only: [:show, :update, :destroy]
 
