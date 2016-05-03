@@ -1,10 +1,6 @@
 class TodoController < ApplicationController
-  before_action  :authenticate_user!
+  before_action :authenticate_user!
 
   def index
-  end
-
-  def template
-    render template: 'templates/' + params[:path], layout: nil
   end
 end

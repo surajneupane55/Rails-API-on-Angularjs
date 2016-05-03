@@ -11,7 +11,7 @@ class Api::TasksController < Api::BaseController
     task = @current_user.tasks.new(safe_params)
 
     if task.save
-      render json: task, status:  :created
+      render json: task, status: :created
     else
       render json: task.errors, status: :unprocessable_entity
     end
