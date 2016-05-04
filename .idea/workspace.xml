@@ -169,6 +169,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="49" />
@@ -608,6 +611,15 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+>>>>>>> Stashed changes
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -617,12 +629,28 @@
       <option name="presentableId" value="Default" />
       <updated>1462294205792</updated>
       <workItem from="1462294214523" duration="197000" />
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <workItem from="1462299066024" duration="1674000" />
+=======
+      <workItem from="1462299066024" duration="2127000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1462299066024" duration="2127000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="1871000" />
+=======
+    <option name="totallyTimeSpent" value="2324000" />
+>>>>>>> Stashed changes
+=======
+    <option name="totallyTimeSpent" value="2324000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-4" width="1317" height="772" extended-state="6" />
