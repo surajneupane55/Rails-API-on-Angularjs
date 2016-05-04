@@ -1,13 +1,44 @@
-<body>
 <div class="container">
-    <div class="header">
+  <h3 class="text-center text-danger"><strong>AngularJS on Rails API</strong></h3>
 
-        <h3 class="text-muted">
-            <%= link_to 'SignIn', new_user_session_path %><br>
-            <%= link_to 'SignUp', new_user_registration_path %>
-        </h3>
+  <div class="col-md-6">
+    <ul class="list-group">
+      <h4 class="list-group-item-heading text-center text-info"><strong>Frontend</strong></h4>
+      <li class="list-group-item"><strong><a href="">Bootstrap</a></strong></li>
+      <li class="list-group-item"><strong><a href="">AngularJs</a></strong></li>
+      <li class="list-group-item"><strong><a href="">jquery</a></strong></li>
+      <li class="list-group-item"><strong><a href="">jquery UI</a></strong></li>
+      <li class="list-group-item"><strong><a href="">Sass</a></strong></li>
+      <li class="list-group-item"><strong><a href="">Font-awesome</a></strong></li>
+      <li class="list-group-item"><strong><a href="">Json</a></strong></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="list-group">
+      <h4 class="list-group-item-heading text-center text-info"><strong>Backend</strong></h4>
+      <li class="list-group-item"><strong><a href="">Ruby</a></strong></li>
+      <li class="list-group-item"><strong><a href="">Ruby on Rails</a></strong></li>
+      <li class="list-group-item"><strong><a href="">SPA(Single Page Application)</a></strong></li>
+      <li class="list-group-item"><strong><a href="">Heroku</a></strong></li>
+      <li class="list-group-item"><strong><a href="">Postgres</a></strong></li>
+      <li class="list-group-item"><strong><a href="">Devise</a></strong></li>
+      <li class="list-group-item"><strong><a href="">Active model serializer</a></strong></li>
+    </ul>
+  </div>
 
-    </div>
+  <div class="col-md-12 text-center">
+    <br>
+    <br>
+        <div class="col-md-4"></div>
+          <div class="col-md-4"> <%= link_to new_user_session_path, class: 'btn btn-success' do %>
+                <strong>Demo APP</strong><i class="fa fa-sign-in" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <div class="col-md-4"></div>
+  </div>
+
 </div>
+
+
 
 

@@ -1,11 +1,26 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
 
   root 'home#index'
+
+  devise_scope :user do
+    authenticated :user do
+      get '/dashboard' => 'todo#dashboard', as: :authenticated_user
+    end
+  end
+  namespace :api, defaults: {format: :json} do
+    devise_scope :user do
+      resource :session, only:[:create, :destroy]
+    end
+    resources :tasks, only: [:index, :create, :update, :destroy, :show] do
+      resources :lists, only: [:index, :create, :update, :destroy]
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -55,4 +70,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
