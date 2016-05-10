@@ -9,6 +9,7 @@ gem 'pg', '0.18.4'
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', '~> 3.2'
+gem 'angularjs-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'active_model_serializers'
