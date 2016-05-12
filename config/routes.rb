@@ -21,7 +21,9 @@ Rails.application.routes.draw do
       resources :lists, only: [:index, :create, :update, :destroy]
     end
   end
-
+  get '/dashboard' => 'todo#index'
+  get '/task_lists/:id' => 'todo#index'
+  get '/todo/:path.html' => 'todo#template', :constraints => { :path => /.+/  }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

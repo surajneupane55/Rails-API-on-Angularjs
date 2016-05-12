@@ -3,7 +3,7 @@
  */
 todoApp = angular.module('todoApp',[
     'ngRoute',
-    'ngResource'
+    'ngResource',
 ]);
 
 
