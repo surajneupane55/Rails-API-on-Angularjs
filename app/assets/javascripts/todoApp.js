@@ -1,10 +1,7 @@
 /**
  * Created by suraj on 9.5.2016.
  */
-todoApp = angular.module('todoApp',[
-    'ngRoute',
-    'ngResource',
-]);
+todoApp = angular.module('todoApp',['ngRoute', 'ngResource']);
 
 
 //make it work with csrf-token in rails application
@@ -26,13 +23,16 @@ todoApp.config (['$routeProvider', '$locationProvider',
         redirectTo: '/dashboard'
     }).
         when('/dashboard', {
-        templateUrl: '/todo/dashboard.html',
+        templateUrl: '/templates/dashboard.html',
         controller: 'DashboardCtrl'
     }).
         when('/tasks/:task_id', {
-        templateUrl: '/todo/task.html',
-        controller: 'TaskListCtrl'
+        templateUrl: '/templates/task.html',
+        controller: 'ListCtrl'
+    }).
+        otherwise({redirectTo: '/dashboard'
     })
+
 
 }]);
 

@@ -1,9 +1,12 @@
 class Api::BaseController < ApplicationController
-  before_action :authenticate
+  # before_action :authenticate
+   before_action :authenticate_user!
 
-  private
 
-  def authenticate
+
+=begin
+ private
+def authenticate
     authenticate_token = request.headers['X-Authenticate-Token']
     @user = User.where(authenticate_token: authenticate_token).first if authenticate_token
     @current_user = @user
@@ -12,6 +15,7 @@ class Api::BaseController < ApplicationController
       head status: :unauthorized
     end
   end
+=end
 
 
   def permission_denied

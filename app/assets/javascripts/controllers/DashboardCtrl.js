@@ -3,6 +3,7 @@
  */
 angular.module('todoApp').controller('DashboardCtrl', function($scope, $location, $routeParams, Task){
     var serverErrorHandler;
+    
     $scope.init = function() {
         this.taskService = new Task(serverErrorHandler);
         return $scope.tasks = this.taskService.all();

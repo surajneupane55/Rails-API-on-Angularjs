@@ -8,11 +8,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  devise_scope :user do
-    authenticated :user do
-      get '/dashboard' => 'todo#dashboard', as: :authenticated_user
-    end
-  end
+
   namespace :api, defaults: {format: :json} do
     devise_scope :user do
       resource :session, only:[:create, :destroy]
@@ -21,9 +17,9 @@ Rails.application.routes.draw do
       resources :lists, only: [:index, :create, :update, :destroy]
     end
   end
-  get '/dashboard' => 'todo#index'
-  get '/task_lists/:id' => 'todo#index'
-  get '/todo/:path.html' => 'todo#template', :constraints => { :path => /.+/  }
+  get '/dashboard' => 'templates#index'
+  get '/tasks/:id' => 'templates#index'
+  get '/templates/:path.html' => 'templates#template', :constraints => { :path => /.+/  }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

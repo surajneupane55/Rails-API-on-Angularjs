@@ -4,11 +4,11 @@ class Api::TasksController < Api::BaseController
   before_action :task, only: [:show, :update, :destroy]
 
   def index
-    render json: @current_user.tasks
+    render json: current_user.tasks
   end
 
   def create
-    task = @current_user.tasks.new(safe_params)
+    task = current_user.tasks.new(safe_params)
 
     if task.save
       render json: task, status: :created
@@ -36,7 +36,7 @@ class Api::TasksController < Api::BaseController
 
   private
   def check_user
-    permission_denied if @current_user != set_task.user
+    permission_denied if current_user != set_task.user
   end
 
   def safe_params
