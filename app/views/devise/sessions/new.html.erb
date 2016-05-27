@@ -1,10 +1,11 @@
+<div clasS="col-md-2"></div>
+<div clasS="col-md-8">
+<div class="panel panel-default">
 
-<div class="jumbotron">
-<h3 class="text-center"><strong>Sign in</strong></h3>
-  <div class="container" >
-  <div class="col-md-2">
-    </div>
-    <div class="col-md-8">
+    <h3 class="text-center"><strong>Sign in</strong></h3>
+
+
+
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
           <div class="form-group">
             <%= f.label :email, class: "col-sm-2 control-label" %>
@@ -44,12 +45,6 @@
           </div>
 
       <% end %>
-    </div>
-
-
-    <div class="col-md-2">
-
-
-    </div>
 </div>
 </div>
+<div clasS="col-md-2"></div>

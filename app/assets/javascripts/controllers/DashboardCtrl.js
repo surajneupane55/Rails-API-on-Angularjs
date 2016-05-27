@@ -10,10 +10,16 @@ angular.module('todoApp').controller('DashboardCtrl', function($scope, $location
     }
     
     $scope.createTask= function (name) {
-        this.taskService.create({
-            name: name }, function(task) {
-            return $location.url("/tasks" + task.id);
-        });
+
+        if(name) {
+            this.taskService.create({
+                name: name }, function(task) {
+                return $location.url("/tasks" + task.id);
+            });
+        }
+        else {
+            return alert ("Input field can't be empty!")
+        }
     };
     
     $scope.deleteTask = function(task, index) {
