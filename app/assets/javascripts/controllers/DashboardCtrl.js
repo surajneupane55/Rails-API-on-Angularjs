@@ -9,18 +9,18 @@ angular.module('todoApp').controller('DashboardCtrl', function($scope, $location
         return $scope.tasks = this.taskService.all();
     }
     
-    $scope.createList = function (name) {
+    $scope.createTask= function (name) {
         this.taskService.create({
             name: name }, function(task) {
             return $location.url("/tasks" + task.id);
         });
     };
     
-    $scope.deleteTask = function(list, index) {
+    $scope.deleteTask = function(task, index) {
         var result;
-        result = conform("Are you sure you want to remove this list?");
+        result = confirm("Are you sure you want to remove this list?");
         if (result) { 
-            this.listsService["delete"](task);
+            this.taskService["delete"](task);
             return $scope.tasks.splice(index, 1);
         }
     };

@@ -15,7 +15,6 @@ todoApp.config (['$routeProvider', '$locationProvider',
 
 //application URL deep linking with html5
     function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode = true;
 
 //configuring route for application
     $routeProvider.
@@ -32,15 +31,14 @@ todoApp.config (['$routeProvider', '$locationProvider',
     }).
         otherwise({redirectTo: '/dashboard'
     })
+        $locationProvider.html5Mode(true);
 
 
 }]);
 
 //making turbolink in rails work with angularjs
-$(document).on('page:load', function() {
-    return $('[ng-app]').each(function(){
-        var module;
-        module = $(this).attr('ng-app');
-        return angular.bootstrap(this, [module]);
-    });
+
+
+$(document).on('ready page:load', function(arguments) {
+    angular.bootstrap(document.body, ['todoApp'])
 });

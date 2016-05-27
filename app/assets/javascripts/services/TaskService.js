@@ -27,7 +27,7 @@ angular.module('todoApp').factory('Task', function($resource, $http){
      };
       
       Task.prototype["delete"] = function(task) {
-          return new this.service().delete({
+          return new this.service().$delete({
               id: task.id
           }, (function() {
               return null;
