@@ -1,7 +1,7 @@
 /**
  * Created by suraj on 10.5.2016.
  */
-angular.module('todoApp').controller('DashboardCtrl', function($scope, $location, $routeParams, Task){
+angular.module('todoApp').controller('DashboardCtrl', ['$scope', '$location', '$routeParams','Task', function($scope, $location, $routeParams, Task){
     var serverErrorHandler;
     
     $scope.init = function() {
@@ -34,4 +34,4 @@ angular.module('todoApp').controller('DashboardCtrl', function($scope, $location
     return serverErrorHandler = function() { 
         return alert("There was a server error, please reload the page and try again.");
     };
-});
+}]);
