@@ -1,7 +1,7 @@
 /**
  * Created by suraj on 23.5.2016.
  */
-angular.module('todoApp').factory('List', function($resource, $http){
+angular.module('todoApp').factory('List', ['$resource', '$http', function($resource, $http){
     var List;
     return List = (function() {
         function List(taskId, errorHandler) {
@@ -57,4 +57,4 @@ angular.module('todoApp').factory('List', function($resource, $http){
 
         return List;
     })();
-})
+}])

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bec166c-c4a2-4c07-923b-009462ccc09a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers/DashboardCtrl.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/DashboardCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers/ListCtrl.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/ListCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/services/ListService.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/services/ListService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/services/TaskService.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/services/TaskService.js" />
     </list>
     <ignored path="todo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,14 +82,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DashboardCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/DashboardCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+            <state relative-caret-position="396">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskService.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/services/TaskService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1170">
+              <caret line="65" column="2" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/ListCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/services/ListService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1062">
+              <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,7 +173,6 @@
         <option value="$PROJECT_DIR$/app/controllers/todo_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/Service/TaskService.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/learning.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/services/ListService.js" />
         <option value="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
@@ -155,7 +185,6 @@
         <option value="$PROJECT_DIR$/app/views/templates/dashboard.html.slim" />
         <option value="$PROJECT_DIR$/app/views/templates/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/templates/task.html.slim" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/ListCtrl.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
@@ -167,11 +196,13 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/todoApp.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/templates/index.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/services/TaskService.js" />
         <option value="$PROJECT_DIR$/app/controllers/api/base_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/templates/dashboard.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/DashboardCtrl.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/services/TaskService.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/services/ListService.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/ListCtrl.js" />
       </list>
     </option>
   </component>
@@ -217,7 +248,148 @@
     <panes>
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="todo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
@@ -893,12 +1065,12 @@
       <workItem from="1464356970104" duration="3367000" />
       <workItem from="1464363585472" duration="351000" />
       <workItem from="1464374258918" duration="12251000" />
-      <workItem from="1464699204776" duration="908000" />
+      <workItem from="1464699204776" duration="1352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109121000" />
+    <option name="totallyTimeSpent" value="109565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="24" width="1319" height="744" extended-state="6" />
@@ -913,7 +1085,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3306189" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299293" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1161,31 +1333,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/ListCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/services/ListService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/todoApp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/services/TaskService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1237,13 +1388,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/ListCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/DashboardCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+        <state relative-caret-position="396">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/services/ListService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/services/TaskService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="65" column="2" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

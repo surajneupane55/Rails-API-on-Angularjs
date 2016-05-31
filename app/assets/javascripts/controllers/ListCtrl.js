@@ -1,7 +1,7 @@
 /**
  * Created by suraj on 10.5.2016.
  */
-angular.module('todoApp').controller("ListCtrl", function($scope, $timeout, $routeParams, Task, List){
+angular.module('todoApp').controller("ListCtrl",['$scope', '$timeout', '$routeParams', 'Task', 'List', function($scope, $timeout, $routeParams, Task, List){
     var serverErrorHandler;
     $scope.init = function() {
         this.listService = new List($routeParams.task_id, serverErrorHandler);
@@ -27,4 +27,4 @@ angular.module('todoApp').controller("ListCtrl", function($scope, $timeout, $rou
     };
 
 
-})
+}])

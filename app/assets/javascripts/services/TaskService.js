@@ -1,7 +1,7 @@
 /**
  * Created by suraj on 12.5.2016.
  */
-angular.module('todoApp').factory('Task', function($resource, $http){
+angular.module('todoApp').factory('Task', ['$resource', '$http', function($resource, $http){
     var Task;
   return Task = (function() {
       
@@ -63,4 +63,4 @@ angular.module('todoApp').factory('Task', function($resource, $http){
       return Task;
       
   })();   
-});
+}]);
