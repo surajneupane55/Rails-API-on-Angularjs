@@ -1,8 +1,10 @@
-<div class = 'ng-cloak' ng-init = "init()">
+<div ng-cloak ng-init = "init()">
 <ul>
-    <li class="text-center" ng-repeat ="list in tasks.list">
+    <li class="text-center list-unstyled">{{task.name}}</li>
+    <li class="list-unstyled" ng-repeat ="list in task.lists">
         <strong>
-            {{tasks.list}}
+            <span></span>
+            {{list.description}}
         </strong>
     </li>
 </ul>

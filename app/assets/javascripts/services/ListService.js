@@ -57,4 +57,4 @@ angular.module('todoApp').factory('List', ['$resource', '$http', function($resou
 
         return List;
     })();
-}])
+}]);
