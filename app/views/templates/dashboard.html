@@ -3,15 +3,15 @@
  <div class="col-md-8">
     <div class="panel panel-default">
             <h4 class="text-center"><strong>My Tasks</strong></h4>
-            <ul class="list-group" ng-show="tasks == 0">
-                <li class="list-group-items">You haven't created any tasks yet.</li>
+            <ul class="list-group-edited list-unstyled" ng-show="tasks == 0">
+                <li class="list-group-items-edited">You haven't created any tasks yet.</li>
             </ul>
-            <ul class=" list-unstyled list-group">
+            <ul class=" list-unstyled list-group-edited">
 
-                <li class="list-group-items" ng-repeat = "task in tasks">
+                <li class="list-group-items-edited" ng-repeat = "task in tasks">
                     <button class="btn btn-danger btn-xs pull-right fa fa-trash-o" type="button" ng-click="deleteTask(task, $index)"></button>
-                    <a href="/tasks/{{task.id}}" class="text-muted"><strong>{{task.name}} </strong></a><span class="badge">{{task.lists.length}}</span>
-                    <br>  <br>   <br>
+                    <a class="link-edited text-info" href="/tasks/{{task.id}}"><strong>{{task.name}} </strong><span class="badge">{{task.lists.length}}</span></a>
+                    <br>  <br>
                 </li>
             </ul>
     </div>
