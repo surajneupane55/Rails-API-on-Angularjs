@@ -13,8 +13,8 @@ angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Tas
         $scope.checkEdit = function(){
             this.displayField = true;
         };
-        this.taskService = new Task(serverErrorHandler);
         this.listService = new List($routeParams.task_id, serverErrorHandler);
+        this.taskService = new Task(serverErrorHandler);
         return $scope.task = this.taskService.find($routeParams.task_id)
     };
 
@@ -23,6 +23,7 @@ angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Tas
         list = this.listService.create({
             description: $scope.listDescription
         });
+        $scope.task.lists.unshift(list);
        return $scope.listDescription = "";
 
     };

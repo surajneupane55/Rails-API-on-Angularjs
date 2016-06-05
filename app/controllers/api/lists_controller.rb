@@ -8,7 +8,7 @@ class Api::ListsController < Api::BaseController
   end
 
   def create
-    list =task.lists.new(safe_param)
+    list = task.lists.new(safe_param)
     if list.save
       render json: list, status: :created
     else
@@ -26,9 +26,7 @@ class Api::ListsController < Api::BaseController
 
   def destroy
     list.destroy
-    if list.destroy
-      render json: "kai kai kai"
-    end
+    render nothing: true
   end
 
   private
