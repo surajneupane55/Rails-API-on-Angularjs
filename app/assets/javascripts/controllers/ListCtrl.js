@@ -4,23 +4,17 @@
 angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Task', 'List', function($scope, $routeParams, Task, List){
     var serverErrorHandler;
     $scope.init = function() {
-
-        $scope.phones = [
-            {
-                name: 'Nexus S',
-                snippet: 'Fast just got faster with Nexus S.'
-            }, {
-                name: 'Motorola XOOM™ with Wi-Fi',
-                snippet: 'The Next, Next Generation tablet.'
-            }, {
-                name: 'MOTOROLA XOOM™',
-                snippet: 'The Next, Next Generation tablet.'
-            }
-        ];
-
-
-        this.listService = new List($routeParams.task_id, serverErrorHandler);
+        $scope.hoverIn = function(){
+            this.hoverEdit = true;
+        };
+        $scope.hoverOut = function(){
+            this.hoverEdit = false;
+        };
+        $scope.checkEdit = function(){
+            this.displayField = true;
+        };
         this.taskService = new Task(serverErrorHandler);
+        this.listService = new List($routeParams.task_id, serverErrorHandler);
         return $scope.task = this.taskService.find($routeParams.task_id)
     };
 
@@ -29,10 +23,12 @@ angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Tas
         list = this.listService.create({
             description: $scope.listDescription
         });
+       return $scope.listDescription = "";
+
     };
     $scope.deleteList = function(list) {
         this.listService["delete"](list);
-        return $scope.tasks.splice($scope.task.lists.indexOf(list), 1);
+        return $scope.task.lists.splice($scope.task.lists.indexOf(list), 1);
     };
 
     $scope.taskNameEdited = function(taskName) {

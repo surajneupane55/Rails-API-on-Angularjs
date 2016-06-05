@@ -21,6 +21,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'devise', '~> 4.0.2'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
+gem 'binding_of_caller'
 gem 'rails_12factor', group: :production
 
 group :development, :test do

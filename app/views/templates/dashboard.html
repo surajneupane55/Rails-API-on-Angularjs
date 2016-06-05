@@ -1,8 +1,8 @@
-<div class = ng-cloak ng-init="init()"></div>
+<div ng-cloak ng-init="init()">
 <div class="col-md-2"></div>
  <div class="col-md-8">
     <div class="panel panel-default">
-            <h4 class="text-center"><strong>My Tasks</strong></h4>
+            <h4 class="text-center"><strong>My Tasks List</strong></h4>
             <ul class="list-group-edited list-unstyled" ng-show="tasks == 0">
                 <li class="list-group-items-edited">You haven't created any tasks yet.</li>
             </ul>
@@ -10,7 +10,7 @@
 
                 <li class="list-group-items-edited" ng-repeat = "task in tasks">
                     <button class="btn btn-danger btn-xs pull-right fa fa-trash-o" type="button" ng-click="deleteTask(task, $index)"></button>
-                    <a class="link-edited text-info" href="/tasks/{{task.id}}"><strong>{{task.name}} </strong><span class="badge">{{task.lists.length}}</span></a>
+                    <a class="link-edited text-info contenteditable" href="/tasks/{{task.id}}"><strong>{{task.name}} </strong><span class="badge">{{task.lists.length}}</span></a>
                     <br>  <br>
                 </li>
             </ul>
@@ -18,14 +18,15 @@
     <div class="panel panel-success">
         <form id="new_task" ng-submit="createTask(taskName)">
             <div class="input-group">
-                <input id ="TaskDescription" class="form-control input-lg" autofocus="autofocus" type='text' placeholder="Task Name" maxlength ='250' ng-model="taskName" data-non-blank>
+                <input id ="TaskDescription" class="form-control input-lg" autofocus="autofocus" type='text' placeholder="Create Task List" maxlength ='250' ng-model="taskName" data-non-blank>
             <span class="input-group-btn">
-              <button class="btn btn-primary btn-lg" type="submit">Create Task</button>
+              <button class="btn btn-primary btn-lg" type="submit">Create</button>
             </span>
             </div>
         </form>
     </div>
-     <div class="panel panel-success">
+     <br><br><br><br>
+     <div class="panel panel-heading">
 
          <ul class="text-center text-warning "><strong> AngularJS bootstraped with Rails API serving a SPA</strong> </ul>
      </div>
@@ -36,3 +37,4 @@
 
 
 <div class="col-md-2"></div>
+</div>

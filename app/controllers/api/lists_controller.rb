@@ -26,7 +26,9 @@ class Api::ListsController < Api::BaseController
 
   def destroy
     list.destroy
-    head :no_content
+    if list.destroy
+      render json: "kai kai kai"
+    end
   end
 
   private
@@ -41,10 +43,10 @@ class Api::ListsController < Api::BaseController
 
 
   def safe_param
-    params.require(:list).permit(:due_date, :description, :status)
+    params.require(:list).permit(:description, :status, :due_date)
   end
 
   def check_user
-    permission_denied if @current_user != task.user
+    permission_denied if current_user != task.user
   end
 end

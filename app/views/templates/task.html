@@ -1,11 +1,40 @@
-<div ng-cloak ng-init = "init()">
-<ul>
-    <li class="text-center list-unstyled">{{task.name}}</li>
-    <li class="list-unstyled" ng-repeat ="list in task.lists">
-        <strong>
-            <span></span>
-            {{list.description}}
-        </strong>
-    </li>
-</ul>
+<div ng-cloak ng-init="init()">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="panel panel-default contenteditable"  ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+            <h4 class="text-center">
+                <strong>
+                    <editabletask model="task.name" on-ready="taskNameEdited(task.name)" input-class="form-control"></editabletask>
+                    <span><i ng-click="checkEdit()" ng-show="hoverEdit"  class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                </strong>
+            </h4>
+        </div>
+        <div class="panel panel-success">
+            <form id="new_list" ng-submit="addList()">
+                <div class="input-group">
+                    <input id ="ListDescription" class="form-control input-lg" autofocus="autofocus" type='text' placeholder="Create todo items" maxlength ='250' ng-model="listDescription" required>
+            <span class="input-group-btn">
+              <button class="btn btn-primary btn-lg" type="submit">Create </button>
+            </span>
+                </div>
+            </form>
+        </div>
+        <div class="panel panel-body" ng-show="task.lists == 0">
+            <ul class="list-group-edited list-unstyled">
+                <li class="list-group-items-edited text-center"><strong>No Todo List created for this task</strong></li>
+            </ul>
+        </div>
+        <div class="panel panel-body" ng-hide="task.lists == 0">
+            <ul class="list-group-edited">
+                <li class="list-unstyled list-edited" ng-repeat="list in task.lists">
+                        <strong>
+                    {{list.description}}
+                    </strong>
+                    <input type="checkbox" on-click="checkStatus()" ng-model="list.status" ng-value="false">
+                    <button class="btn btn-danger btn-xs pull-right fa fa-trash-o" type="button" ng-click="deleteList(list)"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
 </div>
