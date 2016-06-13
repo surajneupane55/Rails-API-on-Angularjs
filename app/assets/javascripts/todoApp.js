@@ -1,7 +1,7 @@
 /**
  * Created by suraj on 9.5.2016.
  */
-todoApp = angular.module('todoApp',['ngRoute', 'ngResource']);
+todoApp = angular.module('todoApp',['ngRoute', 'ngResource', 'ui.bootstrap']);
 
 
 //make it work with csrf-token in rails application

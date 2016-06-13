@@ -1,5 +1,10 @@
 <div  ng-cloak ng-init="init()">
-    <div class="col-md-2"></div>
+    <div class="col-md-2"><%= link_to dashboard_path, class: 'btn-sm btn-default' do %>
+        <strong><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back to todo list
+            </strong>
+
+        <% end %>
+    </div>
     <div class="col-md-8">
         <div class="panel panel-default contenteditable"  ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
             <h4 class="text-center">
@@ -27,11 +32,13 @@
         <div class="panel panel-body" ng-hide="task.lists == 0">
             <ul class="list-group-edited list-unstyled">
                 <li class="list-unstyled list-edited" ng-repeat="list in task.lists">
-                        <strong>
+                    <strong>
                     {{list.description}}
                     </strong>
+                    <em class="text-muted" ng-model="list.due_date" uib-datepicker-popup="{{format}}" is-open="openDatePickers[$index]" datepicker-options="dateOptions"><strong>{{list.due_date| date:'dd.MM.yyyy' }}</strong></em>
                     <input type="checkbox" ng-model="list.status" ng-value="false">
                     <button class="btn btn-danger btn-xs pull-right fa fa-trash-o" type="button" ng-click="deleteList(list)"></button>
+                    <button class="btn btn-default btn-xs pull-right fa fa-calendar" ng-click="open1($event, $index)"></button>
                 </li>
             </ul>
         </div>

@@ -37,6 +37,24 @@ angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Tas
             name: taskName
         });
     };
+// calendar implementation
+      
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[2];
+    $scope.altInputFormats = ['M!/d!/yyyy'];
+
+    $scope.openDatePickers = [];
+    $scope.open1 = function ($event, datePickerIndex) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        if ($scope.openDatePickers[datePickerIndex] === true) {
+            $scope.openDatePickers.length = 0;
+        } else {
+            $scope.openDatePickers.length = 0;
+            $scope.openDatePickers[datePickerIndex] = true;
+        }
+    };
 
 
 }]);
