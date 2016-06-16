@@ -62,5 +62,19 @@ angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Tas
 
      };
 
+    $scope.updateStatus_list = function(list) {
+        if(list.status==true) {
+            $scope.checked = true;
+        }
+            else
+        {
+            $scope.checked= false;
+            
+        }
+        this.listService.update(this.list, {
+            status: list.status
+        });
+    };
+
 
 }]);
