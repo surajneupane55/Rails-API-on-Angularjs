@@ -55,6 +55,12 @@ angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Tas
             $scope.openDatePickers[datePickerIndex] = true;
         }
     };
+     $scope.updateDue_date_list = function(list) {
+         this.listService.update(this.list,  {
+             due_date: list.due_date
+         });
+
+     };
 
 
 }]);

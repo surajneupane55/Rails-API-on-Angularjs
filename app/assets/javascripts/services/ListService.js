@@ -41,7 +41,7 @@ angular.module('todoApp').factory('List', ['$resource', '$http', function($resou
             return new this.service({
                 list: attrs
             }).$update({
-                id: task.id
+                id: list.id
             }, (function(){
                 return null;
             }), this.errorHandler);

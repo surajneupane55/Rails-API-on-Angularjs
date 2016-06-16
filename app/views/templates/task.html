@@ -35,7 +35,7 @@
                     <strong>
                     {{list.description}}
                     </strong>
-                    <em class="text-muted" ng-model="list.due_date" uib-datepicker-popup="{{format}}" is-open="openDatePickers[$index]" datepicker-options="dateOptions"><strong>{{list.due_date| date:'dd.MM.yyyy' }}</strong></em>
+                    <em class="text-muted" ng-model="list.due_date" uib-datepicker-popup="{{format}}" is-open="openDatePickers[$index]" ng-change="updateDue_date_list(list)" datepicker-options="dateOptions"><strong>{{list.due_date| date:'dd.MM.yyyy' }}</strong></em>
                     <input type="checkbox" ng-model="list.status" ng-value="false">
                     <button class="btn btn-danger btn-xs pull-right fa fa-trash-o" type="button" ng-click="deleteList(list)"></button>
                     <button class="btn btn-default btn-xs pull-right fa fa-calendar" ng-click="open1($event, $index)"></button>
