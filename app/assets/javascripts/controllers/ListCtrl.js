@@ -17,6 +17,20 @@ angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Tas
         this.taskService = new Task(serverErrorHandler);
         return $scope.task = this.taskService.find($routeParams.task_id)
     };
+    //implement strike for completed task
+    $scope.checked = function(list, index){
+        $scope.status =  [];
+        if(list.status==true){
+            $scope.status[index] = true;
+        }
+    }
+
+    $scope.completed = function(index) {
+        if (list.status == true) {
+            $scope.checked[index] = true;
+        }
+    };
+    
 
     $scope.addList = function() {
         var list;
@@ -56,22 +70,18 @@ angular.module('todoApp').controller("ListCtrl", ['$scope', '$routeParams', 'Tas
         }
     };
      $scope.updateDue_date_list = function(list) {
+         if (list.status == true) {
+             $scope.status[index] = true;
+         }
          this.listService.update(this.list,  {
              due_date: list.due_date
          });
 
      };
 
-    $scope.updateStatus_list = function(list) {
-        if(list.status==true) {
-            $scope.checked = true;
-        }
-            else
-        {
-            $scope.checked= false;
-            
-        }
-        this.listService.update(this.list, {
+    $scope.updateStatus_list = function(list, index) {
+
+               this.listService.update(this.list, {
             status: list.status
         });
     };

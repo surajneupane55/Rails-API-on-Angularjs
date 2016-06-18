@@ -31,19 +31,18 @@
         </div>
         <div class="panel panel-body" ng-hide="task.lists == 0">
             <ul class="list-group-edited list-unstyled">
-                <li class="list-unstyled list-edited" ng-repeat="list in task.lists">
-                    <strong>
-
-                            {{list.description}}
-
+                <li class="list-unstyled list-edited" ng-repeat="list in task.lists ">
+                    <strong  ng-class="{strike: list.status==true}">
+                       <span>{{list.description}}</span>
                     </strong>
                     <em class="text-muted" ng-model="list.due_date" uib-datepicker-popup="{{format}}" is-open="openDatePickers[$index]" ng-change="updateDue_date_list(list)" datepicker-options="dateOptions"><strong>{{list.due_date| date:'dd.MM.yyyy' }}</strong></em>
-                    <input type="checkbox" ng-model="list.status" ng-change="updateStatus_list(list)">
+                    <input type="checkbox" ng-model="list.status" ng-change="updateStatus_list(list, $index)">
                     <button class="btn btn-danger btn-xs pull-right fa fa-trash-o" type="button" ng-click="deleteList(list)"></button>
                     <button class="btn btn-default btn-xs pull-right fa fa-calendar" ng-click="open1($event, $index)"></button>
                 </li>
             </ul>
         </div>
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-2 text-right"><strong class="text-danger text-capitalize"><i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i><%=link_to 'Todo API serving ReactJs working progress', 'https://facebook.github.io/react/', :target => '_blank'%></strong></div>
 </div>
+
