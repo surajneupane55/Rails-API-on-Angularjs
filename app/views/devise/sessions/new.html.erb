@@ -12,17 +12,19 @@
             <div class="col-md-7">
               <%= f.email_field :email, autofocus: true , class: "form-control" %>
             </div>
-            <div><strong>For guest user:</strong></div>
-            <div><strong>email: abc@123.com</strong></div>
           </div>
+      <span class="text-center"><strong>Guest User</strong></span>
+      <span class="text-center"><strong>email: abc@123.com</strong></span>
 
-          <div class="form-group">
+
+      <div class="form-group">
             <%= f.label :password, class: "col-sm-2 control-label" %>
             <div class="col-md-7">
               <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
             </div>
-            <div><strong>password: 12345678</strong></div>
           </div>
+      <span class="text-center"><strong>password: 12345678</strong></span>
+      <br>
 
           <% if devise_mapping.rememberable? -%>
               <div class="form-group">
